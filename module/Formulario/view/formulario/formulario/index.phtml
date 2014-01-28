@@ -8,13 +8,13 @@ $this->headTitle($title);
 
 <?php
 $form = $this->form;
-$form->setAttribute('action', $this->url('formulario', array('action' => 'add')));
+$form->setAttribute('action', $this->url('formulario', array('action' => 'guardar')));
 $form->prepare();
 
 echo $this->form()->openTag($form);
 echo $this->formHidden($form->get('per_id'));
 ?>
-
+<div class="datos-personales grupo">
 <h3>Datos Personales</h3>
 <hr>
 <div class='form-group'><?php echo $this->formRow($form->get('pai_id')); ?></div>
@@ -24,18 +24,16 @@ echo $this->formHidden($form->get('per_id'));
 <div class='form-group'><?php echo $this->formRow($form->get('per_apellido_paterno')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_lugar')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_fecha')); ?></div>
-<div><?php echo $this->formRow($form->get('per_sexo')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_sexo')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_dependientes')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_estado_civil')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_nombre')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_documento')); ?></div>
 
-<hr>
-
+</div>
+<div class="direccion-domiciliaria grupo">
 <h3>Dirección Domiciliaria</h3>
-
 <hr>
-
 <div class='form-group'><?php echo $this->formRow($form->get('pro_id')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('ciu_id')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('par_id')); ?></div>   
@@ -47,22 +45,20 @@ echo $this->formHidden($form->get('per_id'));
 <div class='form-group'><?php echo $this->formRow($form->get('per_email')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_tipo_vivienda')); ?></div>
 
-<hr>
+</div>
 
+<div class="descripcion-actividad grupo">
 <h3>Descripción de la Actividad Económica</h3>
-
 <hr>
-
 <div class='form-group'><?php echo $this->formRow($form->get('act_economica')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_numero_empleados')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_tipo')); ?></div>
 
-<hr>
+</div>
 
+<div class="actividad-economica grupo">
 <h3>Actividad Económica</h3>
-
 <hr>
-
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_producto')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_inicio')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_nombre')); ?></div>
@@ -74,6 +70,55 @@ echo $this->formHidden($form->get('per_id'));
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_celular')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_email')); ?></div>
 
+</div>
+
+<div class="informacion-financiera grupo">
+<h3>Información Financiera</h3>
+<hr>
+<h4>INGRESOS</h4>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_arriendos')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_remesas'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_sueldo_solicitante'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_sueldo_conyuge'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_pensiones'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_ingresos_negocio'));?></div>
+
+<h4>EGRESOS</h4>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_alimentacion')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_educacion'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_servicios_basicos'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_arriendo_gasto'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_otros'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_deudas'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_combustible'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_transporte'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('inf_fin_vestuario'));?></div>
+
+</div>
+
+<div class="situacion-financiera grupo">
+<h3>Situación Financiera</h3>
+<hr>
+<div class="subgrupo">
+<h4>Descripción Activos</h4>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_bancos')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_inversiones'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_cuentas'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_mercaderia'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_muebles'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_vehiculos'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_propiedades'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_activos'));?></div>
+</div>
+<div class="subgrupo">
+<h4>Descripción Pasivos</h4>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_prestamos')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_cuentas_pagar'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_otras_obligaciones'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_prestamo'));?></div>
+</div>
+<hr>
+</div>
 <?php
 echo $this->formSubmit($form->get('submit'));
 echo $this->form()->closeTag();

@@ -163,7 +163,16 @@ class FormularioController extends AbstractActionController
             return $this->redirect()->toRoute('formulario', array('formulario' => 'index'));
         }
     }
-
+    
+    public function guardarAction(){
+        $params = $this->request->getPost();
+        
+        echo '<pre>';
+        print_r($params);
+        echo '</pre>';
+        die;
+    }
+    
     public function addAction()
     {
     }

@@ -19,7 +19,6 @@ class FormularioForm extends Form {
             ),
         ));
 
-
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
             'name' => 'pai_id',
@@ -36,39 +35,47 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_documento',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Documento',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_nombres',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Nombres',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_apellido_materno',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Apellido materno',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_apellido_paterno',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Apellido paterno',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_nacimiento_lugar',
             'attributes' => array(
@@ -79,6 +86,7 @@ class FormularioForm extends Form {
                 'label' => 'Lugar de nacimiento',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_nacimiento_fecha',
             'attributes' => array(
@@ -107,14 +115,11 @@ class FormularioForm extends Form {
             )
         ));
 
-
-
-
-
         $this->add(array(
             'name' => 'per_dependientes',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Dependientes',
@@ -140,19 +145,23 @@ class FormularioForm extends Form {
                 ),
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_conyuge_nombre',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Nombre Conyuge',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_conyuge_documento',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Documento',
@@ -198,52 +207,61 @@ class FormularioForm extends Form {
             ),
         ));
 
-
         $this->add(array(
             'name' => 'per_barrio',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Barrio',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_direccion',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Direccion',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_tiempo_residencia',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Tiempo de residencia',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_telefono',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Telefono',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_celular',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Celular',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_email',
             'attributes' => array(
@@ -292,7 +310,8 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_numero_empleados',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Numero de empleados',
@@ -319,7 +338,8 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_empresa_producto',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Producto de la empresa',
@@ -328,7 +348,8 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_empresa_inicio',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Inicio de operaciones de la empresa',
@@ -337,7 +358,8 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_empresa_nombre',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Nombre de la empresa',
@@ -346,7 +368,8 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_empresa_cargo',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Cargo en la empresa',
@@ -355,7 +378,8 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_empresa_ruc',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Ruc de la empresa',
@@ -374,7 +398,8 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_empresa_referencia',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Referencia de ubicacion de la empresa',
@@ -383,7 +408,8 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_empresa_telefono',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Telefono de la empresa',
@@ -392,19 +418,319 @@ class FormularioForm extends Form {
         $this->add(array(
             'name' => 'per_empresa_celular',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Celular de la empresa',
             ),
         ));
+        
         $this->add(array(
             'name' => 'per_empresa_email',
             'attributes' => array(
-                'type' => 'text', 'class' => 'form-control',
+                'type' => 'text', 
+                'class' => 'form-control',
             ),
             'options' => array(
                 'label' => 'Email de la empresa',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_arriendos',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Arriendos',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_remesas',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Remesas',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_sueldo_solicitante',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Sueldo Solicitante',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_sueldo_conyuge',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Sueldo Conyuge',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_pensiones',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Pensiones',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_ingresos_negocio',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Ingresos Negocios',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_alimentacion',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Alimentación',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_educacion',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Educación',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_servicios_basicos',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Luz, Agua, Teléfono',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_arriendo_gasto',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Arriendo',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_otros',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Otros Gastos',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_deudas',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Cuota Mensual Deudas',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_combustible',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Combustible',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_transporte',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Transporte',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'inf_fin_vestuario',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Vestuario',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_bancos',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Caja y Bancos',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_inversiones',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Inversiones',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_cuentas',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Cuentas y Doc. Por Cobrar',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_mercaderia',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Mercadería',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_muebles',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Muebles y Enseres',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_vehiculos',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Vehículos',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_propiedades',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Propiedades',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_activos',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Otros Activos',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_prestamos',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Prestamos en Inst. Financieras',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_cuentas_pagar',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Cuentas y Doc. Por Pagar',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_otras_obligaciones',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Otras Obligaciones',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'sit_fin_prestamo',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Prestamo en Alianza del Valle',
             ),
         ));
 
