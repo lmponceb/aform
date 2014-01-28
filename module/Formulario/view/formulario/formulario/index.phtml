@@ -1,0 +1,70 @@
+<?php
+// module/Album/view/album/album/add.phtml:
+
+$title = 'FORMULARIO CONOCIMIENTO SOCIO E INSPECCION';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('formulario', array('action' => 'add')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('per_id')); 
+
+
+
+?>
+<div class='form-group'><?php echo $this->formRow($form->get('pai_id')); ?>
+</div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_documento')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_nombres')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_apellido_materno')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_apellido_paterno')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_lugar')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_fecha')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_sexo')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_dependientes')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_estado_civil')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_nombre')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_documento')); ?>
+
+<div class='form-group'><?php echo $this->formRow($form->get('pro_id')); ?>
+</div>
+
+
+<div class='form-group'><?php echo $this->formRow($form->get('ciu_id')); ?>
+</div>
+
+<div class='form-group'><?php echo $this->formRow($form->get('par_id')); ?>
+</div>
+    
+<?php $this->sayHello("2"); ?>
+    
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_barrio')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_direccion')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_tiempo_residencia')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_telefono')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_celular')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_email')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_tipo_vivienda')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_numero_empleados')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_tipo')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_producto')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_inicio')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_nombre')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_cargo')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_ruc')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_direccion')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_referencia')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_telefono')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_celular')); ?>
+</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_email')); ?></div>
+
+<?php 
+echo $this->formSubmit($form->get('submit')); 
+echo $this->form()->closeTag();
+
+
