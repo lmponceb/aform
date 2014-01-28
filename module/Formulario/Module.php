@@ -20,6 +20,8 @@ use Formulario\Model\CiudadTable;
 use Formulario\Model\Parroquia;
 use Formulario\Model\ParroquiaTable;
 
+use Formulario\Model\ActividadEconomica;
+use Formulario\Model\ActividadEconomicaTable;
 
 
 class Module
@@ -101,6 +103,18 @@ class Module
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new Parroquia());
                     return new TableGateway('parroquia', $dbAdapter, null, $resultSetPrototype);
+                },
+                        
+                'Formulario\Model\ActividadEconomicaTable' =>  function($sm) {
+                    $tableGateway = $sm->get('ActividadEconomicaTableGateway');
+                    $table = new ActividadEconomicaTable($tableGateway);
+                    return $table;
+                },
+                'ActividadEconomicaTableGateway' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new ActividadEconomica());
+                    return new TableGateway('actividad_economica', $dbAdapter, null, $resultSetPrototype);
                 },
                         
             ),

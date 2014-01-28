@@ -19,6 +19,7 @@ class FormularioController extends AbstractActionController
     protected $provinciaTable;
     protected $ciudadTable;
     protected $parroquiaTable;
+    protected $actividadEconomica;
     
     public function getFormularioTable()
     {
@@ -63,21 +64,28 @@ class FormularioController extends AbstractActionController
             $this->parroquiaTable = $sm->get('Formulario\Model\ParroquiaTable');
         }
         return $this->parroquiaTable;
-    }    
+    }   
+    
+    public function getActividadEconomicaTable()
+    {
+        if (!$this->actividadEconomica) {
+            $sm = $this->getServiceLocator();
+            $this->actividadEconomica = $sm->get('Formulario\Model\ActividadEconomicaTable');
+        }
+        return $this->actividadEconomica;
+    }  
     
     public function indexAction()
     {
         $form = new FormularioForm();
-        $form->get('submit')->setValue('Add');
+        $form->get('submit')->setValue('Guardar');
 
         $result= new ViewModel(array(
             'paises' => $this->getPaisTable()->getPaisesSelect(),
         ));
-        
-        
+             
         $form->get('pai_id')->setValueOptions($result->paises);
-        
-        
+               
         $result= new ViewModel(array(
             'provincias' => $this->getProvinciaTable()->getProvinciasSelect(),
         ));
@@ -96,6 +104,12 @@ class FormularioController extends AbstractActionController
         
         $form->get('par_id')->setValueOptions($result->parroquias);
         
+        $result= new ViewModel(array(
+            'actividad_economica' => $this->getActividadEconomicaTable()->getActividadesSelect(),
+        ));
+        
+        $form->get('act_economica')->setValueOptions($result->actividad_economica);
+        
       /*$request = $this->getRequest();
         if ($request->isPost()) {
             $album = new Formulario();
@@ -112,6 +126,42 @@ class FormularioController extends AbstractActionController
         }*/
         return array('form' => $form);
 
+    }
+    
+    //Función para cargar ciudades por provincia
+    public function ciudadesAction(){
+        if ($this->getRequest()->isXmlHttpRequest()) {
+            $provincia = $this->request->getPost('provincia');
+            $c = $this->getCiudadTable()->getCiudadesSelect($provincia);
+            
+            $jsonCities = json_encode($c);
+            $response = $this->getResponse();
+            $response->setStatusCode(200);
+            $response->setContent($jsonCities);
+
+            return $response;
+            
+        }else{
+            return $this->redirect()->toRoute('formulario', array('formulario' => 'index'));
+        }
+    }
+    
+    //Función para cargar ciudades por provincia
+    public function parroquiasAction(){
+        if ($this->getRequest()->isXmlHttpRequest()) {
+            $ciudad = $this->request->getPost('ciudad');
+            $c = $this->getParroquiaTable()->getParroquiasSelect($ciudad);
+            
+            $jsonCities = json_encode($c);
+            $response = $this->getResponse();
+            $response->setStatusCode(200);
+            $response->setContent($jsonCities);
+
+            return $response;
+            
+        }else{
+            return $this->redirect()->toRoute('formulario', array('formulario' => 'index'));
+        }
     }
 
     public function addAction()

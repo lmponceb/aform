@@ -12,59 +12,118 @@ $form->setAttribute('action', $this->url('formulario', array('action' => 'add'))
 $form->prepare();
 
 echo $this->form()->openTag($form);
-echo $this->formHidden($form->get('per_id')); 
-
-
-
+echo $this->formHidden($form->get('per_id'));
 ?>
-<div class='form-group'><?php echo $this->formRow($form->get('pai_id')); ?>
-</div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_documento')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_nombres')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_apellido_materno')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_apellido_paterno')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_lugar')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_fecha')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_sexo')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_dependientes')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_estado_civil')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_nombre')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_documento')); ?>
 
-<div class='form-group'><?php echo $this->formRow($form->get('pro_id')); ?>
-</div>
+<h3>Datos Personales</h3>
+<hr>
+<div class='form-group'><?php echo $this->formRow($form->get('pai_id')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_documento')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_nombres')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_apellido_materno')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_apellido_paterno')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_lugar')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_fecha')); ?></div>
+<div><?php echo $this->formRow($form->get('per_sexo')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_dependientes')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_estado_civil')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_nombre')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_documento')); ?></div>
 
+<hr>
 
-<div class='form-group'><?php echo $this->formRow($form->get('ciu_id')); ?>
-</div>
+<h3>Dirección Domiciliaria</h3>
 
-<div class='form-group'><?php echo $this->formRow($form->get('par_id')); ?>
-</div>
-    
-<?php $this->sayHello("2"); ?>
-    
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_barrio')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_direccion')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_tiempo_residencia')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_telefono')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_celular')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_email')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_tipo_vivienda')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_numero_empleados')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_tipo')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_producto')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_inicio')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_nombre')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_cargo')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_ruc')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_direccion')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_referencia')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_telefono')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_celular')); ?>
-</div><div class='form-group'><?php echo $this->formRow($form->get('per_empresa_email')); ?></div>
+<hr>
 
-<?php 
-echo $this->formSubmit($form->get('submit')); 
+<div class='form-group'><?php echo $this->formRow($form->get('pro_id')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ciu_id')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('par_id')); ?></div>   
+<div class='form-group'><?php echo $this->formRow($form->get('per_barrio')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_direccion')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_tiempo_residencia')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_telefono')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_celular')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_email')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_tipo_vivienda')); ?></div>
+
+<hr>
+
+<h3>Descripción de la Actividad Económica</h3>
+
+<hr>
+
+<div class='form-group'><?php echo $this->formRow($form->get('act_economica')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_numero_empleados')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_tipo')); ?></div>
+
+<hr>
+
+<h3>Actividad Económica</h3>
+
+<hr>
+
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_producto')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_inicio')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_nombre')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_cargo')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_ruc')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_direccion')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_referencia')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_telefono')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_celular')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_email')); ?></div>
+
+<?php
+echo $this->formSubmit($form->get('submit'));
 echo $this->form()->closeTag();
+?>
+
+<script type="text/javascript">
+    $(function() {
+
+        $("#ciu_id").prop("disabled", true);
+        $("#par_id").prop("disabled", true);
+
+        $("#pro_id").change(function() {
+            $.ajax({
+                url: "<?php echo $this->url('formulario', array('controller' => 'formulario', 'action' => 'ciudades')) ?>",
+                type: "POST",
+                dataType: "json",
+                data: "provincia=" + $(this).val(),
+                beforeSend: function() {
+                    $("#ciu_id").prop("disabled", true);
+                }
+            }).done(function(ciudades) {
+                $("#ciu_id").html("");
+                $("#ciu_id").append('<option>Escoja la ciudad</option>');
+                for (ciudad in ciudades) {
+                    $("#ciu_id").append('<option value="' + ciudad + '">' + ciudades[ciudad] + '</option>');
+                }
+                $("#ciu_id").prop("disabled", false);
+            });
+        });
+
+        $("#ciu_id").change(function() {
+            $.ajax({
+                url: "<?php echo $this->url('formulario', array('controller' => 'formulario', 'action' => 'parroquias')) ?>",
+                type: "POST",
+                dataType: "json",
+                data: "ciudad=" + $(this).val(),
+                beforeSend: function() {
+                    $("#par_id").prop("disabled", true);
+                }
+            }).done(function(parroquias) {
+                $("#par_id").html("");
+                $("#par_id").append('<option>Escoja la parroquia</option>');
+                for (parroquia in parroquias) {
+                    $("#par_id").append('<option value="' + parroquia + '">' + parroquias[parroquia] + '</option>');
+                }
+                $("#par_id").prop("disabled", false);
+            });
+        });
+
+    });
+</script>
 
 

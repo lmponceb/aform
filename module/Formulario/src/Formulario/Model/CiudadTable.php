@@ -28,8 +28,12 @@ class CiudadTable
         }
         return $row;
     }
-    public function getCiudadesSelect() {
-        $resultSet = $this->tableGateway->select();
+    public function getCiudadesSelect($pro_id = null) {
+        if($pro_id == null){
+            $resultSet = $this->tableGateway->select();
+        }else{
+            $resultSet = $this->tableGateway->select(array('pro_id' => $pro_id));
+        }
         $result = array();
         foreach ($resultSet as $ciudad){
             $result[$ciudad->ciu_id]=$ciudad->ciu_nombre;
