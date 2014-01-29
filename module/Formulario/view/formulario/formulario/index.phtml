@@ -127,13 +127,43 @@ echo $this->formHidden($form->get('per_id'));
 <hr>
 <div class="subgrupo">
 <h4>Personales(Familiares o amistades que no vivan con Ud.)</h4>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres1'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion1'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono1'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono[]'));?></div>
 
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres2'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion2'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono2'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono[]'));?></div>
+</div>
+<div class="subgrupo">
+<h4>Comerciales</h4>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_com_nombres[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_com_direccion[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_com_telefono[]'));?></div>
+
+<div class='form-group'><?php echo $this->formRow($form->get('ref_com_nombres[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_com_direccion[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_com_telefono[]'));?></div>
+</div>
+<div class="subgrupo">
+<h4>Bancarias</h4>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_ban_banco[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_ban_tipo_cuenta[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_ban_numero_cuenta[]'));?></div>
+
+<div class='form-group'><?php echo $this->formRow($form->get('ref_ban_banco[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_ban_tipo_cuenta[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_ban_numero_cuenta[]'));?></div>
+</div>
+<div class="subgrupo">
+<h4>Tarjetas de Crédito</h4>
+<div class='form-group'><?php echo $this->formRow($form->get('tar_cre_institucion[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('tar_cre_numero_tarjeta[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('tar_cre_anio_socio[]'));?></div>
+
+<div class='form-group'><?php echo $this->formRow($form->get('tar_cre_institucion[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('tar_cre_numero_tarjeta[]'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('tar_cre_anio_socio[]'));?></div>
 </div>
 </div>
 <?php
@@ -152,7 +182,7 @@ echo $this->form()->closeTag();
                 buttonImage: "<?php echo $this->basePath('img/calendar.gif')?>",
                 buttonImageOnly: true
 	});
-        
+             
         $("#ciu_id").prop("disabled", true);
         $("#par_id").prop("disabled", true);
 

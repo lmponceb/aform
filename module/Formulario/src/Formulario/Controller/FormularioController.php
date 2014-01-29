@@ -12,6 +12,9 @@ use Formulario\Model\Parroquia;
 use Formulario\Model\ActividadEconomicaPorPersona as ActividadPorPersona;
 use Formulario\Model\ActividadEconomica;
 use Formulario\Model\ReferenciasPersonales;
+use Formulario\Model\ReferenciasComerciales;
+use Formulario\Model\ReferenciasBancarias;
+use Formulario\Model\TarjetasCredito;
 use Formulario\Form\FormularioForm;
 
 class FormularioController extends AbstractActionController {
@@ -27,6 +30,9 @@ class FormularioController extends AbstractActionController {
     protected $financieraPorPersona;
     protected $situacionPorPersona;
     protected $referenciasPersonales;
+    protected $referenciasComerciales;
+    protected $referenciasBancarias;
+    protected $tarjetasCredito;
 
     public function getPersonaTable() {
         if (!$this->personaTable) {
@@ -117,7 +123,32 @@ class FormularioController extends AbstractActionController {
         }
         return $this->referenciasPersonales;
     }
+    
+    public function getReferenciasComerciales() {
+        if (!$this->referenciasComerciales) {
+            $sm = $this->getServiceLocator();
+            $this->referenciasComerciales = $sm->get('Formulario\Model\ReferenciasComercialesTable');
+        }
+        return $this->referenciasComerciales;
+    }
 
+    public function getReferenciasBancarias() {
+        if (!$this->referenciasBancarias) {
+            $sm = $this->getServiceLocator();
+            $this->referenciasBancarias = $sm->get('Formulario\Model\ReferenciasBancariasTable');
+        }
+        return $this->referenciasBancarias;
+    }
+    
+    public function getTarjetasCredito() {
+        if (!$this->tarjetasCredito) {
+            $sm = $this->getServiceLocator();
+            $this->tarjetasCredito = $sm->get('Formulario\Model\TarjetasCreditoTable');
+        }
+        return $this->tarjetasCredito;
+    }
+
+        
     //Función para generar el formulario    
     public function indexAction() {
         $form = new FormularioForm();
@@ -135,39 +166,29 @@ class FormularioController extends AbstractActionController {
     //Función para guardar los datos del formulario a la base de datos
     public function guardarAction() {
         $params = $this->request->getPost();
-
-        $rp = new ReferenciasPersonales();
-        $p = $this->referenciasPersonales($params);
-//        $rp->exchangeArray($p);
-        echo '<pre>';
-        print_r($p);
-        echo '</pre>';
-        die();
-
         //Guardar datos de la persona
         $persona = new Persona();
         $persona->exchangeArray($params);
         $this->getPersonaTable()->guardar($persona);
-
         //Obtener la id de una persona
         $per_id = $this->getPersonaTable()->obtenerPorCedula($persona->getPer_documento());
-
         //Guardar datos de actividad economica de la persona
         $actividadPorPersona = new ActividadPorPersona;
         $actividadPorPersona->exchangeArray($params);
         $actividadPorPersona->setPer_id($per_id);
         $this->getActividadEconomicaTable->guardar($actividadPorPersona);
-
         //Guarda datos de información financiera de la persona
         $this->ingresosEgresos($params, $per_id);
-
         //Guarda datos de situación financiera de la persona
         $this->activosPasivos($params, $per_id);
-
-        echo '<pre>';
-        print_r();
-        echo '</pre>';
-        die();
+        //Guarda datos de referencias personales
+        $this->referenciasPersonales($per_id,$params);
+        //Guarda datos de referencias comerciales
+        $this->referenciasComerciales($per_id,$params);
+        //Guarda datos de referencias bancarias
+        $this->referenciasBancarias($per_id,$params);
+        //Guarda datos de tarjetas de credito
+        $this->tarjetasCredito($per_id, $params);
 
         return $this->redirect()->toRoute('formulario');
     }
@@ -288,18 +309,143 @@ class FormularioController extends AbstractActionController {
 
 //        return $result;
     }
-
-    public function referenciasPersonales($params) {
+    
+    //Guarda datos de las referencias personales
+    public function referenciasPersonales($per_id, $params) {
         $arreglo = array();
 
         foreach ($params as $key => $value) {
             if (substr($key, 0, 7) == 'ref_per') {
-                $arreglo[substr($key, 0, strlen($key) - 1)] = $value;
-                $this->getReferenciasPersonales()->guardar($per_id);
+                $arreglo[$key] = $value;
             }
         }
 
-        return $arreglo;
+        $a1 = array();
+        $a2 = array();
+
+        foreach ($arreglo as $key => $value) {
+            foreach ($value as $k => $v) {
+                if ($k == 0) {
+                    $a1[$key] = $v;
+                }
+                $a2[$key] = $v;
+            }
+        }
+
+        $rp1 = new ReferenciasPersonales();
+        $rp1->exchangeArray($a1);
+        $rp1->setPer_id($per_id);
+
+        $rp2 = new ReferenciasPersonales();
+        $rp2->exchangeArray($a2);
+        $rp2->setPer_id($per_id);
+
+        $this->getReferenciasPersonales()->guardar($rp1);
+        $this->getReferenciasPersonales()->guardar($rp2);
+    }
+    
+    //Guarda datos de las referencias comerciales
+    public function referenciasComerciales($per_id, $params) {
+        $arreglo = array();
+
+        foreach ($params as $key => $value) {
+            if (substr($key, 0, 7) == 'ref_com') {
+                $arreglo[$key] = $value;
+            }
+        }
+
+        $a1 = array();
+        $a2 = array();
+
+        foreach ($arreglo as $key => $value) {
+            foreach ($value as $k => $v) {
+                if ($k == 0) {
+                    $a1[$key] = $v;
+                }
+                $a2[$key] = $v;
+            }
+        }
+        
+        $rc1 = new ReferenciasComerciales();
+        $rc1->exchangeArray($a1);
+        $rc1->setPer_id($per_id);
+        
+        $rc2 = new ReferenciasComerciales();
+        $rc2->exchangeArray($a2);
+        $rc2->setPer_id($per_id);
+        
+        $this->getReferenciasComerciales()->guardar($rc1);
+        $this->getReferenciasComerciales()->guardar($rc2);
+
+    }
+    
+    //Guarda datos de referencias bancarias
+    public function referenciasBancarias($per_id, $params) {
+        $arreglo = array();
+
+        foreach ($params as $key => $value) {
+            if (substr($key, 0, 7) == 'ref_ban') {
+                $arreglo[$key] = $value;
+            }
+        }
+
+        $a1 = array();
+        $a2 = array();
+
+        foreach ($arreglo as $key => $value) {
+            foreach ($value as $k => $v) {
+                if ($k == 0) {
+                    $a1[$key] = $v;
+                }
+                $a2[$key] = $v;
+            }
+        }
+        
+        $rc1 = new ReferenciasBancarias();
+        $rc1->exchangeArray($a1);
+        $rc1->setPer_id($per_id);
+        
+        $rc2 = new ReferenciasBancarias();
+        $rc2->exchangeArray($a2);
+        $rc2->setPer_id($per_id);
+        
+        $this->getReferenciasBancarias()->guardar($rc1);
+        $this->getReferenciasBancarias()->guardar($rc2);
+    }
+    
+    //Guarda datos de tarjetas de credito
+    public function tarjetasCredito($per_id, $params) {
+        $arreglo = array();
+
+        foreach ($params as $key => $value) {
+            if (substr($key, 0, 7) == 'tar_cre') {
+                $arreglo[$key] = $value;
+            }
+        }
+
+        $a1 = array();
+        $a2 = array();
+
+        foreach ($arreglo as $key => $value) {
+            foreach ($value as $k => $v) {
+                if ($k == 0) {
+                    $a1[$key] = $v;
+                }
+                $a2[$key] = $v;
+            }
+        }
+        
+        $rc1 = new TarjetasCredito();
+        $rc1->exchangeArray($a1);
+        $rc1->setPer_id($per_id);
+        
+        $rc2 = new TarjetasCredito();
+        $rc2->exchangeArray($a2);
+        $rc2->setPer_id($per_id);
+        
+        $c = $this->getTarjetasCredito()->guardar($rc1);
+        $this->getTarjetasCredito()->guardar($rc2);
+
     }
 
     public function addAction() {

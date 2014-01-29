@@ -26,6 +26,12 @@ use Formulario\Model\SituacionFinancieraPorPersona as SituacionPorPersona;
 use Formulario\Model\SituacionFinancieraPorPersonaTable as SituacionPorPersonaTable;
 use Formulario\Model\ReferenciasPersonales;
 use Formulario\Model\ReferenciasPersonalesTable;
+use Formulario\Model\ReferenciasComerciales;
+use Formulario\Model\ReferenciasComercialesTable;
+use Formulario\Model\ReferenciasBancarias;
+use Formulario\Model\ReferenciasBancariasTable;
+use Formulario\Model\TarjetasCredito;
+use Formulario\Model\TarjetasCreditoTable;
 
 class Module {
 
@@ -166,6 +172,39 @@ class Module {
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new ReferenciasPersonales());
                     return new TableGateway('referencias_personales', $dbAdapter, null, $resultSetPrototype);
+                },
+                'Formulario\Model\ReferenciasComercialesTable' => function($sm) {
+                    $tableGateway = $sm->get('ReferenciasComercialesTableGateway');
+                    $table = new ReferenciasComercialesTable($tableGateway);
+                    return $table;
+                },
+                'ReferenciasComercialesTableGateway' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new ReferenciasComerciales());
+                    return new TableGateway('referencias_comerciales', $dbAdapter, null, $resultSetPrototype);
+                },
+                'Formulario\Model\ReferenciasBancariasTable' => function($sm) {
+                    $tableGateway = $sm->get('ReferenciasBancariasTableGateway');
+                    $table = new ReferenciasBancariasTable($tableGateway);
+                    return $table;
+                },
+                'ReferenciasBancariasTableGateway' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new ReferenciasBancarias());
+                    return new TableGateway('referencias_bancarias', $dbAdapter, null, $resultSetPrototype);
+                },
+                'Formulario\Model\TarjetasCreditoTable' => function($sm) {
+                    $tableGateway = $sm->get('TarjetasCreditoTableGateway');
+                    $table = new TarjetasCreditoTable($tableGateway);
+                    return $table;
+                },
+                'TarjetasCreditoTableGateway' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new TarjetasCredito());
+                    return new TableGateway('tarjetas_credito', $dbAdapter, null, $resultSetPrototype);
                 },
             ),
         );
