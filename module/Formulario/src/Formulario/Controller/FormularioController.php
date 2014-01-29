@@ -11,6 +11,7 @@ use Formulario\Model\Ciudad;
 use Formulario\Model\Parroquia;
 use Formulario\Model\ActividadEconomicaPorPersona as ActividadPorPersona;
 use Formulario\Model\ActividadEconomica;
+use Formulario\Model\ReferenciasPersonales;
 use Formulario\Form\FormularioForm;
 
 class FormularioController extends AbstractActionController {
@@ -24,6 +25,8 @@ class FormularioController extends AbstractActionController {
     protected $actividadPorPersona;
     protected $informacionFinanciera;
     protected $financieraPorPersona;
+    protected $situacionPorPersona;
+    protected $referenciasPersonales;
 
     public function getPersonaTable() {
         if (!$this->personaTable) {
@@ -99,6 +102,23 @@ class FormularioController extends AbstractActionController {
         return $this->financieraPorPersona;
     }
 
+    public function getSituacionPorPersona() {
+        if (!$this->situacionPorPersona) {
+            $sm = $this->getServiceLocator();
+            $this->situacionPorPersona = $sm->get('Formulario\Model\SituacionPorPersonaTable');
+        }
+        return $this->situacionPorPersona;
+    }
+
+    public function getReferenciasPersonales() {
+        if (!$this->referenciasPersonales) {
+            $sm = $this->getServiceLocator();
+            $this->referenciasPersonales = $sm->get('Formulario\Model\ReferenciasPersonalesTable');
+        }
+        return $this->referenciasPersonales;
+    }
+
+    //Función para generar el formulario    
     public function indexAction() {
         $form = new FormularioForm();
         $form->get('submit')->setValue('Guardar');
@@ -109,26 +129,20 @@ class FormularioController extends AbstractActionController {
         $form->get('par_id')->setValueOptions($this->getParroquiaTable()->getParroquiasSelect());
         $form->get('act_eco_id')->setValueOptions($this->getActividadEconomicaTable()->getActividadesSelect());
 
-        /* $request = $this->getRequest();
-          if ($request->isPost()) {
-          $album = new Formulario();
-          $form->setInputFilter($album->getInputFilter());
-          $form->setData($request->getPost());
-
-          if ($form->isValid()) {
-          $album->exchangeArray($form->getData());
-          $this->getFormularioTable()->saveFormulario($formulario);
-
-          // Redirect to list of albums
-          return $this->redirect()->toRoute('album');
-          }
-          } */
         return array('form' => $form);
     }
 
     //Función para guardar los datos del formulario a la base de datos
     public function guardarAction() {
         $params = $this->request->getPost();
+
+        $rp = new ReferenciasPersonales();
+        $p = $this->referenciasPersonales($params);
+//        $rp->exchangeArray($p);
+        echo '<pre>';
+        print_r($p);
+        echo '</pre>';
+        die();
 
         //Guardar datos de la persona
         $persona = new Persona();
@@ -142,14 +156,20 @@ class FormularioController extends AbstractActionController {
         $actividadPorPersona = new ActividadPorPersona;
         $actividadPorPersona->exchangeArray($params);
         $actividadPorPersona->setPer_id($per_id);
+        $this->getActividadEconomicaTable->guardar($actividadPorPersona);
 
         //Guarda datos de información financiera de la persona
         $this->ingresosEgresos($params, $per_id);
 
-//        echo '<pre>';
-//        print_r();
-//        echo '</pre>';
-//        die();
+        //Guarda datos de situación financiera de la persona
+        $this->activosPasivos($params, $per_id);
+
+        echo '<pre>';
+        print_r();
+        echo '</pre>';
+        die();
+
+        return $this->redirect()->toRoute('formulario');
     }
 
     //Función para cargar ciudades por provincia
@@ -186,6 +206,7 @@ class FormularioController extends AbstractActionController {
         }
     }
 
+    //Función para ingresar información financiera por persona
     public function ingresosEgresos($params, $per_id) {
 
         $ingresos = array(
@@ -226,6 +247,59 @@ class FormularioController extends AbstractActionController {
             }
         }
 //            return $result;
+    }
+
+    //Función para ingresar situación financiera por persona
+    public function activosPasivos($params, $per_id = null) {
+
+        $activos = array(
+            'sit_fin_bancos1' => 1,
+            'sit_fin_inversiones2' => 2,
+            'sit_fin_cuentas3' => 3,
+            'sit_fin_mercaderia4' => 4,
+            'sit_fin_muebles5' => 5,
+            'sit_fin_vehiculos6' => 6,
+            'sit_fin_propiedades7' => 7,
+            'sit_fin_activos8' => 8
+        );
+
+//        $result = array();
+        foreach ($activos as $key => $value) {
+            if ((int) $params[$key] > 0) {
+                $this->getSituacionPorPersona()->guardar($per_id, $value, $params[$key]);
+//                $result[$value] = $params[$key];
+            }
+        }
+
+
+        $pasivos = array(
+            'sit_fin_prestamos9' => 9,
+            'sit_fin_cuentas_pagar10' => 10,
+            'sit_fin_otras_obligaciones11' => 11,
+            'sit_fin_prestamo12' => 12
+        );
+
+        foreach ($pasivos as $key => $value) {
+            if ((int) $params[$key] > 0) {
+                $this->getSituacionPorPersona()->guardar($per_id, $value, '-' . $params[$key]);
+//                $result[$value] = $params[$key];
+            }
+        }
+
+//        return $result;
+    }
+
+    public function referenciasPersonales($params) {
+        $arreglo = array();
+
+        foreach ($params as $key => $value) {
+            if (substr($key, 0, 7) == 'ref_per') {
+                $arreglo[substr($key, 0, strlen($key) - 1)] = $value;
+                $this->getReferenciasPersonales()->guardar($per_id);
+            }
+        }
+
+        return $arreglo;
     }
 
     public function addAction() {

@@ -103,23 +103,38 @@ echo $this->formHidden($form->get('per_id'));
 <hr>
 <div class="subgrupo">
 <h4>Descripción Activos</h4>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_bancos')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_inversiones'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_cuentas'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_mercaderia'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_muebles'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_vehiculos'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_propiedades'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_activos'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_bancos1')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_inversiones2'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_cuentas3'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_mercaderia4'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_muebles5'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_vehiculos6'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_propiedades7'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_activos8'));?></div>
 </div>
 <div class="subgrupo">
 <h4>Descripción Pasivos</h4>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_prestamos')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_cuentas_pagar'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_otras_obligaciones'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_prestamo'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_prestamos9')); ?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_cuentas_pagar10'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_otras_obligaciones11'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('sit_fin_prestamo12'));?></div>
 </div>
 <hr>
+</div>
+
+<div class="referencias grupo">
+<h3>Referencias Personales,Comerciales y Bancarias</h3>   
+<hr>
+<div class="subgrupo">
+<h4>Personales(Familiares o amistades que no vivan con Ud.)</h4>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres1'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion1'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono1'));?></div>
+
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres2'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion2'));?></div>
+<div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono2'));?></div>
+</div>
 </div>
 <?php
 echo $this->formSubmit($form->get('submit'));

@@ -605,134 +605,200 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_bancos',
+            'name' => 'sit_fin_bancos1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Caja y Bancos',
+                'label' => 'Caja y Bancos:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_inversiones',
+            'name' => 'sit_fin_inversiones2',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Inversiones',
+                'label' => 'Inversiones:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_cuentas',
+            'name' => 'sit_fin_cuentas3',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Cuentas y Doc. Por Cobrar',
+                'label' => 'Cuentas y Doc. Por Cobrar:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_mercaderia',
+            'name' => 'sit_fin_mercaderia4',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Mercadería',
+                'label' => 'Mercadería:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_muebles',
+            'name' => 'sit_fin_muebles5',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Muebles y Enseres',
+                'label' => 'Muebles y Enseres:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_vehiculos',
+            'name' => 'sit_fin_vehiculos6',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Vehículos',
+                'label' => 'Vehículos:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_propiedades',
+            'name' => 'sit_fin_propiedades7',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Propiedades',
+                'label' => 'Propiedades:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_activos',
+            'name' => 'sit_fin_activos8',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Otros Activos',
+                'label' => 'Otros Activos:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_prestamos',
+            'name' => 'sit_fin_prestamos9',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Prestamos en Inst. Financieras',
+                'label' => 'Prestamos en Inst. Financieras:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_cuentas_pagar',
+            'name' => 'sit_fin_cuentas_pagar10',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Cuentas y Doc. Por Pagar',
+                'label' => 'Cuentas y Doc. Por Pagar:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_otras_obligaciones',
+            'name' => 'sit_fin_otras_obligaciones11',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Otras Obligaciones',
+                'label' => 'Otras Obligaciones:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'sit_fin_prestamo',
+            'name' => 'sit_fin_prestamo12',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Prestamo en Alianza del Valle',
+                'label' => 'Prestamo en Alianza del Valle:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_nombres1',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Nombres y Apellidos:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_nombres2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Nombres y Apellidos:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_direccion1',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Dirección:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_direccion2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Dirección:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_telefono1',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Teléfono:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_telefono2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Teléfono:',
             ),
         ));
 

@@ -22,6 +22,10 @@ use Formulario\Model\InformacionFinanciera;
 use Formulario\Model\InformacionFinancieraTable;
 use Formulario\Model\InformacionFinancieraPorPersona as FinancieraPorPersona;
 use Formulario\Model\InformacionFinancieraPorPersonaTable as FinancieraPorPersonaTable;
+use Formulario\Model\SituacionFinancieraPorPersona as SituacionPorPersona;
+use Formulario\Model\SituacionFinancieraPorPersonaTable as SituacionPorPersonaTable;
+use Formulario\Model\ReferenciasPersonales;
+use Formulario\Model\ReferenciasPersonalesTable;
 
 class Module {
 
@@ -140,7 +144,29 @@ class Module {
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new FinancieraPorPersona());
                     return new TableGateway('informacion_financiera_por_persona', $dbAdapter, null, $resultSetPrototype);
-                },  
+                },
+                'Formulario\Model\SituacionPorPersonaTable' => function($sm) {
+                    $tableGateway = $sm->get('SituacionPorPersonaTableGateway');
+                    $table = new SituacionPorPersonaTable($tableGateway);
+                    return $table;
+                },
+                'SituacionPorPersonaTableGateway' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new SituacionPorPersona());
+                    return new TableGateway('situacion_financiera_por_persona', $dbAdapter, null, $resultSetPrototype);
+                },
+                'Formulario\Model\ReferenciasPersonalesTable' => function($sm) {
+                    $tableGateway = $sm->get('ReferenciasPersonalesTableGateway');
+                    $table = new ReferenciasPersonalesTable($tableGateway);
+                    return $table;
+                },
+                'ReferenciasPersonalesTableGateway' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new ReferenciasPersonales());
+                    return new TableGateway('referencias_personales', $dbAdapter, null, $resultSetPrototype);
+                },
             ),
         );
     }
