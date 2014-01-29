@@ -873,6 +873,23 @@ class FormularioForm extends Form {
                 'label' => 'Socio desde(Año):',
             ),
         ));
+        
+        $this->add(array(
+            'type' => 'Zend\Form\Element\Select',
+            'name' => 'per_tarjeta_credito',
+            'attributes' => array(
+                'id' => 'per_tarjeta_credito',
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Tarjeta de Cajero Automático:',
+                'empty_option' => 'Escoja una opción',
+                'value_options' => array(
+                    'SI' => 'SI',
+                    'NO' => 'NO'
+                ),
+            ),
+        ));
 
         $this->add(array(
             'name' => 'submit',

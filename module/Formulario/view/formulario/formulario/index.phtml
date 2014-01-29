@@ -23,7 +23,7 @@ echo $this->formHidden($form->get('per_id'));
 <div class='form-group'><?php echo $this->formRow($form->get('per_apellido_paterno')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_apellido_materno')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_lugar')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_fecha')); ?></div>
+<div class='form-group d-picker'><?php echo $this->formRow($form->get('per_nacimiento_fecha')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_sexo')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_dependientes')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_estado_civil')); ?></div>
@@ -60,7 +60,7 @@ echo $this->formHidden($form->get('per_id'));
 <h3>Actividad Económica</h3>
 <hr>
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_producto')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_inicio')); ?></div>
+<div class='form-group d-picker'><?php echo $this->formRow($form->get('per_empresa_inicio')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_nombre')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_cargo')); ?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_ruc')); ?></div>
@@ -165,6 +165,10 @@ echo $this->formHidden($form->get('per_id'));
 <div class='form-group'><?php echo $this->formRow($form->get('tar_cre_numero_tarjeta[]'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('tar_cre_anio_socio[]'));?></div>
 </div>
+<div class="subgrupo">
+<h4>Servicios</h4>
+<div class='form-group'><?php echo $this->formRow($form->get('per_tarjeta_credito'));?></div>
+</div>
 </div>
 <?php
 echo $this->formSubmit($form->get('submit'));
@@ -182,9 +186,16 @@ echo $this->form()->closeTag();
                 buttonImage: "<?php echo $this->basePath('img/calendar.gif')?>",
                 buttonImageOnly: true
 	});
-             
+        
+        <?php if($this->flag=='crear'):?>
         $("#ciu_id").prop("disabled", true);
         $("#par_id").prop("disabled", true);
+        <?php endif;?>
+            
+        <?php if($this->flag=='editar'):?>
+        $("#ciu_id").prop("disabled", false);
+        $("#par_id").prop("disabled", false);
+        <?php endif;?>
 
         $("#pro_id").change(function() {
             $.ajax({

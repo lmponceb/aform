@@ -64,9 +64,22 @@ form#formulario label{
 /*Contenedores de campos */
 form#formulario div.form-group{
     float:left;
-    height: 45px;
+    height: 55px;
     width: 350px;
     margin:1em;
+}
+
+/*Estilo errors campos*/
+form#formulario div.form-group ul{
+    list-style: none;
+    padding-left: 0;
+    color:red;
+}
+
+/*EStilo errors campos con datepicker*/
+form#formulario div.d-picker ul{
+    position:relative;
+    bottom:20px;
 }
 
 /*Campos con tamaños definidos*/

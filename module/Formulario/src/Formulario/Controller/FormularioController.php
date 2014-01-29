@@ -16,6 +16,7 @@ use Formulario\Model\ReferenciasComerciales;
 use Formulario\Model\ReferenciasBancarias;
 use Formulario\Model\TarjetasCredito;
 use Formulario\Form\FormularioForm;
+use Formulario\Form\FormularioValidator;
 
 class FormularioController extends AbstractActionController {
 
@@ -160,12 +161,45 @@ class FormularioController extends AbstractActionController {
         $form->get('par_id')->setValueOptions($this->getParroquiaTable()->getParroquiasSelect());
         $form->get('act_eco_id')->setValueOptions($this->getActividadEconomicaTable()->getActividadesSelect());
 
-        return array('form' => $form);
+        return new ViewModel(array(
+            'form' => $form,
+            'flag' => 'crear'
+                ));
     }
 
     //Función para guardar los datos del formulario a la base de datos
     public function guardarAction() {
+        if(!$this->getRequest()->isPost()){
+            return $this->redirect()->toRoute('formulario',array('controller' => 'formulario'));
+        }
+        
         $params = $this->request->getPost();
+        
+//        echo '<pre>';
+//        print_r($params);
+//        echo '</pre>';
+//        die();
+        
+        $form = new FormularioForm();
+        $form->get('pai_id')->setValueOptions($this->getPaisTable()->getPaisesSelect());
+        $form->get('pro_id')->setValueOptions($this->getProvinciaTable()->getProvinciasSelect());
+        $form->get('ciu_id')->setValueOptions($this->getCiudadTable()->getCiudadesSelect());
+        $form->get('par_id')->setValueOptions($this->getParroquiaTable()->getParroquiasSelect());
+        $form->get('act_eco_id')->setValueOptions($this->getActividadEconomicaTable()->getActividadesSelect());
+        
+        $form->setInputFilter(new FormularioValidator());
+        
+        $form->setData($params);
+        
+        if(!$form->isValid()){
+            $mv = new ViewModel(array(
+                'form' => $form,
+                'flag' => 'editar'
+            ));
+            
+            $mv->setTemplate('formulario/formulario/index');
+            return $mv;
+        }
         //Guardar datos de la persona
         $persona = new Persona();
         $persona->exchangeArray($params);
@@ -176,7 +210,7 @@ class FormularioController extends AbstractActionController {
         $actividadPorPersona = new ActividadPorPersona;
         $actividadPorPersona->exchangeArray($params);
         $actividadPorPersona->setPer_id($per_id);
-        $this->getActividadEconomicaTable->guardar($actividadPorPersona);
+        $this->getActividadEconomicaTable()->guardar($actividadPorPersona);
         //Guarda datos de información financiera de la persona
         $this->ingresosEgresos($params, $per_id);
         //Guarda datos de situación financiera de la persona
