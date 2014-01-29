@@ -7,9 +7,8 @@ use Zend\Db\TableGateway\TableGateway;
 class ActividadEconomicaTable{
     
     protected $tableGateway;
-    
-    public function __construct(TableGateway $tableGateway)
-    {
+
+    public function __construct(TableGateway $tableGateway) {
         $this->tableGateway = $tableGateway;
     }
     

@@ -28,7 +28,7 @@ class FormularioForm extends Form {
             ),
             'options' => array(
                 'label' => 'Pa&iacute;s:',
-                'empty_option' => 'Escoja el pais'
+                'empty_option' => 'Escoja el País:'
             ),
         ));
 
@@ -39,7 +39,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Documento',
+                'label' => 'No. de Documento:',
             ),
         ));
         
@@ -50,7 +50,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Nombres',
+                'label' => 'Nombres:',
             ),
         ));
         
@@ -61,7 +61,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Apellido materno',
+                'label' => 'Apellido Materno:',
             ),
         ));
         
@@ -72,7 +72,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Apellido paterno',
+                'label' => 'Apellido Paterno:',
             ),
         ));
         
@@ -83,7 +83,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Lugar de nacimiento',
+                'label' => 'Lugar de Nacimiento:',
             ),
         ));
         
@@ -92,9 +92,10 @@ class FormularioForm extends Form {
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
+                'id' => 'per_nacimiento_fecha',
             ),
             'options' => array(
-                'label' => 'Fecha de nacimiento',
+                'label' => 'Fecha de Nacimiento:',
             ),
         ));
 
@@ -103,7 +104,7 @@ class FormularioForm extends Form {
             'type' => 'Zend\Form\Element\Radio',
             'name' => 'per_sexo',
             'options' => array(
-                'label' => 'Sexo',
+                'label' => 'Sexo:',
                 'value_options' => array(
                     'F' => 'F',
                     'M' => 'M',
@@ -122,7 +123,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Dependientes',
+                'label' => 'No. de Dependientes:',
             ),
         ));
 
@@ -137,11 +138,11 @@ class FormularioForm extends Form {
                 'label' => 'Estado Civil:',
                 'empty_option' => 'Escoja el estado civil',
                 'value_options' => array(
-                    1 => 'Arrendada',
-                    2 => 'Vive con familiares',
-                    3 => 'Propia No hipotecada',
-                    4 => 'Propia Hipotecada',
-                    5 => 'Prestada'
+                    1 => 'Casado',
+                    2 => 'Divorciado',
+                    3 => 'Soltero',
+                    4 => 'Unión Libre',
+                    5 => 'Viudo'
                 ),
             ),
         ));
@@ -153,7 +154,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Nombre Conyuge',
+                'label' => 'Nombre Conyuge:',
             ),
         ));
         
@@ -164,7 +165,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Documento',
+                'label' => 'No. Documento Conyuge:',
             ),
         ));
 
@@ -214,7 +215,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Barrio',
+                'label' => 'Barrio:',
             ),
         ));
         
@@ -225,7 +226,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Direccion',
+                'label' => 'Dirección:',
             ),
         ));
         
@@ -236,7 +237,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Tiempo de residencia',
+                'label' => 'Tiempo de Residencia:',
             ),
         ));
         
@@ -247,7 +248,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Telefono',
+                'label' => 'Teléfono:',
             ),
         ));
         
@@ -258,7 +259,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Celular',
+                'label' => 'Celular:',
             ),
         ));
         
@@ -269,7 +270,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Email',
+                'label' => 'Email:',
             ),
         ));
 
@@ -295,9 +296,9 @@ class FormularioForm extends Form {
         
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
-            'name' => 'act_economica',
+            'name' => 'act_eco_id',
             'attributes' => array(
-                'id' => 'act_economica',
+                'id' => 'act_eco_id',
                 'class' => 'form-control',
             ),
             'options' => array(
@@ -314,7 +315,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Numero de empleados',
+                'label' => 'Número de Empleados:',
             ),
         ));
         
@@ -342,7 +343,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Producto de la empresa',
+                'label' => 'Producto/Servicio que ofrece la Empresa:',
             ),
         ));
         $this->add(array(
@@ -350,9 +351,10 @@ class FormularioForm extends Form {
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
+                'id' => 'per_empresa_inicio'
             ),
             'options' => array(
-                'label' => 'Inicio de operaciones de la empresa',
+                'label' => 'Inicio de Operaciones de la Empresa:',
             ),
         ));
         $this->add(array(
@@ -362,7 +364,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Nombre de la empresa',
+                'label' => 'Nombre de la Empresa:',
             ),
         ));
         $this->add(array(
@@ -372,7 +374,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Cargo en la empresa',
+                'label' => 'Cargo en la Empresa:',
             ),
         ));
         $this->add(array(
@@ -382,7 +384,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Ruc de la empresa',
+                'label' => 'Ruc de la Empresa:',
             ),
         ));
         $this->add(array(
@@ -392,7 +394,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Direccion de la empresa',
+                'label' => 'Dirección de la Empresa:',
             ),
         ));
         $this->add(array(
@@ -402,7 +404,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Referencia de ubicacion de la empresa',
+                'label' => 'Referencia de Ubicación de la Empresa:',
             ),
         ));
         $this->add(array(
@@ -412,7 +414,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Telefono de la empresa',
+                'label' => 'Teléfono de la Empresa:',
             ),
         ));
         $this->add(array(
@@ -422,7 +424,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Celular de la empresa',
+                'label' => 'Celular de la Empresa:',
             ),
         ));
         
@@ -433,172 +435,172 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Email de la empresa',
+                'label' => 'Email de la Empresa:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_arriendos',
+            'name' => 'inf_fin_arriendos1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Arriendos',
+                'label' => 'Arriendos:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_remesas',
+            'name' => 'inf_fin_remesas2',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Remesas',
+                'label' => 'Remesas:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_sueldo_solicitante',
+            'name' => 'inf_fin_sueldo_solicitante3',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Sueldo Solicitante',
+                'label' => 'Sueldo Solicitante:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_sueldo_conyuge',
+            'name' => 'inf_fin_sueldo_conyuge4',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Sueldo Conyuge',
+                'label' => 'Sueldo Conyuge:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_pensiones',
+            'name' => 'inf_fin_pensiones5',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Pensiones',
+                'label' => 'Pensiones:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_ingresos_negocio',
+            'name' => 'inf_fin_ingresos_negocio6',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Ingresos Negocios',
+                'label' => 'Ingresos Negocios:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_alimentacion',
+            'name' => 'inf_fin_alimentacion7',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Alimentación',
+                'label' => 'Alimentación:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_educacion',
+            'name' => 'inf_fin_educacion8',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Educación',
+                'label' => 'Educación:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_servicios_basicos',
+            'name' => 'inf_fin_servicios_basicos9',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Luz, Agua, Teléfono',
+                'label' => 'Luz, Agua, Teléfono:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_arriendo_gasto',
+            'name' => 'inf_fin_arriendo_gasto10',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Arriendo',
+                'label' => 'Arriendo:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_otros',
+            'name' => 'inf_fin_otros11',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Otros Gastos',
+                'label' => 'Otros Gastos:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_deudas',
+            'name' => 'inf_fin_deudas12',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Cuota Mensual Deudas',
+                'label' => 'Cuota Mensual Deudas:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_combustible',
+            'name' => 'inf_fin_combustible13',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Combustible',
+                'label' => 'Combustible:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_transporte',
+            'name' => 'inf_fin_transporte14',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Transporte',
+                'label' => 'Transporte:',
             ),
         ));
         
         $this->add(array(
-            'name' => 'inf_fin_vestuario',
+            'name' => 'inf_fin_vestuario15',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Vestuario',
+                'label' => 'Vestuario:',
             ),
         ));
         
