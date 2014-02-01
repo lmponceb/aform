@@ -200,10 +200,7 @@ class FormularioController extends AbstractActionController {
         
         $persona = new Persona();
         $persona->exchangeArray($params);
-            $mv = new ViewModel(array(
-                'form' => $form,
-                'flag' => 'editar'
-            ));
+
         if(!$this->getPersonaTable()->obtenerPorCedula($persona->getPer_documento())){
             //Guardar datos de la persona    
             $this->getPersonaTable()->guardar($persona);  
