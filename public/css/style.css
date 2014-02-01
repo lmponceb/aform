@@ -64,7 +64,7 @@ form#formulario label{
 /*Contenedores de campos */
 form#formulario div.form-group{
     float:left;
-    height: 55px;
+    height: 60px;
     width: 350px;
     margin:1em;
 }
@@ -112,6 +112,35 @@ div.grupo{
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
+
+div.descripcion-actividad{
+height:200px;
+}
+
+div.actividad-economica{
+height:470px;
+}
+
+div.ingresos{
+height:270px;
+}
+
+div.egresos{
+height:360px;
+}
+
+div.activos{
+height:360px;
+}
+
+div.pasivos{
+height:270px;
+}
+
+div.personales,div.comerciales,div.bancarias,div.credito{
+height:270px;
+}
+
 
 /*Subsecciones del formulario */
 div.subgrupo{

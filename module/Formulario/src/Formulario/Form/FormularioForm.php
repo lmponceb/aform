@@ -737,7 +737,7 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'ref_per_nombres[]',
+            'name' => 'ref_per_nombres1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -748,7 +748,29 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'ref_per_direccion[]',
+            'name' => 'ref_per_nombres2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Nombres y Apellidos:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_direccion1',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Dirección:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_direccion2',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -759,7 +781,7 @@ class FormularioForm extends Form {
         ));
                 
         $this->add(array(
-            'name' => 'ref_per_telefono[]',
+            'name' => 'ref_per_telefono1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -770,7 +792,18 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'ref_com_nombres[]',
+            'name' => 'ref_per_telefono2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Teléfono:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_com_nombres1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -781,7 +814,18 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'ref_com_direccion[]',
+            'name' => 'ref_com_nombres2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Nombres y Apellidos:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_com_direccion1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -792,7 +836,18 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'ref_com_telefono[]',
+            'name' => 'ref_com_direccion2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Dirección:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_com_telefono1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -803,7 +858,29 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'ref_ban_banco[]',
+            'name' => 'ref_com_telefono2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Teléfono:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_ban_banco1',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Institución:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_ban_banco2',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -815,9 +892,9 @@ class FormularioForm extends Form {
         
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
-            'name' => 'ref_ban_tipo_cuenta[]',
+            'name' => 'ref_ban_tipo_cuenta1',
             'attributes' => array(
-                'id' => 'ref_ban_tipo_cuenta[]',
+                'id' => 'ref_ban_tipo_cuenta1',
                 'class' => 'form-control',
             ),
             'options' => array(
@@ -831,7 +908,24 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'ref_ban_numero_cuenta[]',
+            'type' => 'Zend\Form\Element\Select',
+            'name' => 'ref_ban_tipo_cuenta2',
+            'attributes' => array(
+                'id' => 'ref_ban_tipo_cuenta2',
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Tipo de Cuenta:',
+                'empty_option' => 'Escoja el tipo de cuenta',
+                'value_options' => array(
+                    'C' => 'Cuenta Corriente',
+                    'A' => 'Cuenta Ahorros'
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_ban_numero_cuenta1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -842,7 +936,18 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'tar_cre_institucion[]',
+            'name' => 'ref_ban_numero_cuenta2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Número de Cuenta:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'tar_cre_institucion1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -853,7 +958,18 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'tar_cre_numero_tarjeta[]',
+            'name' => 'tar_cre_institucion2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Institución:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'tar_cre_numero_tarjeta1',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control',
@@ -864,7 +980,29 @@ class FormularioForm extends Form {
         ));
         
         $this->add(array(
-            'name' => 'tar_cre_anio_socio[]',
+            'name' => 'tar_cre_numero_tarjeta2',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Número de Tarjeta:',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'tar_cre_anio_socio1',
+            'attributes' => array(
+                'type' => 'text', 
+                'class' => 'form-control tar_cre_anio_socio',
+            ),
+            'options' => array(
+                'label' => 'Socio desde(Año):',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'tar_cre_anio_socio2',
             'attributes' => array(
                 'type' => 'text', 
                 'class' => 'form-control tar_cre_anio_socio',

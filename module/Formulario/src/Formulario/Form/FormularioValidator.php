@@ -37,9 +37,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -52,10 +61,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -67,10 +87,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
-                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',                            
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -82,10 +113,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -112,9 +154,20 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Date',
+                    'options' => array(
+                        'format' => 'Y/m/d',
+                        'messages' => array(
+                        \Zend\Validator\Date::INVALID => 'Formato de fecha incorrecto',
+                        
                         ),
                     ),
                 ),
@@ -142,9 +195,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -172,10 +234,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -187,9 +260,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -247,10 +329,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -262,10 +355,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -277,9 +381,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -292,9 +405,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -307,9 +429,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -322,9 +453,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
-                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',                        
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'EmailAddress',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\Validator\EmailAddress::INVALID_FORMAT => 'Email no válido',
                         ),
                     ),
                 ),
@@ -367,9 +507,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -397,10 +546,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -412,9 +572,20 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Date',
+                    'options' => array(
+                        'format' => 'Y/m/d',
+                        'messages' => array(
+                        \Zend\Validator\Date::INVALID => 'Formato de fecha incorrecto',
+                        \Zend\Validator\Date::INVALID_DATE   => "Fecha no es válida",                 
                         ),
                     ),
                 ),
@@ -427,10 +598,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -442,10 +624,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -457,9 +650,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -472,10 +674,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -487,10 +700,21 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
                     ),
                 ),
             ),
@@ -502,9 +726,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -517,9 +750,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -532,9 +774,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'EmailAddress',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\Validator\EmailAddress::INVALID_FORMAT => 'Email no válido',
                         ),
                     ),
                 ),
@@ -547,9 +798,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -562,9 +822,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -577,9 +846,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -592,9 +870,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -607,9 +894,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -622,9 +918,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -637,9 +942,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -652,9 +966,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -667,9 +990,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -682,9 +1014,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -697,9 +1038,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -712,9 +1062,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -727,9 +1086,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -742,9 +1110,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -757,9 +1134,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -772,9 +1158,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -787,9 +1182,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -802,9 +1206,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -817,9 +1230,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -832,9 +1254,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -847,9 +1278,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -862,9 +1302,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -877,9 +1326,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -892,9 +1350,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -907,9 +1374,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -922,9 +1398,18 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
                         ),
                     ),
                 ),
@@ -937,6 +1422,387 @@ class FormularioValidator extends InputFilter{
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Float',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Float::NOT_FLOAT => 'El campo debe tener solo números decimales',
+                        ),
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_nombres1',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::INVALID => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_nombres2',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::INVALID => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_direccion1',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_direccion2',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_telefono1',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
+                        ),
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_per_telefono2',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
+                        ),
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_com_nombres1',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_com_nombres2',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_com_direccion1',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_com_direccion2',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_com_telefono1',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
+                        ),
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_com_telefono2',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
+                        ),
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_ban_banco1',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_ban_banco2',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'ref_ban_tipo_cuenta1',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
@@ -947,11 +1813,12 @@ class FormularioValidator extends InputFilter{
         ));
         
         $this->add(array(
-            'name' => 'ref_per_nombres[]',
-            'required' => false,
+            'name' => 'ref_ban_tipo_cuenta2',
+            'required' => true,
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
@@ -962,14 +1829,23 @@ class FormularioValidator extends InputFilter{
         ));
         
         $this->add(array(
-            'name' => 'ref_per_direccion[]',
-            'required' => false,
+            'name' => 'ref_ban_numero_cuenta1',
+            'required' => true,
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -977,14 +1853,23 @@ class FormularioValidator extends InputFilter{
         ));
         
         $this->add(array(
-            'name' => 'ref_per_telefono[]',
-            'required' => false,
+            'name' => 'ref_ban_numero_cuenta2',
+            'required' => true,
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -992,14 +1877,75 @@ class FormularioValidator extends InputFilter{
         ));
         
         $this->add(array(
-            'name' => 'ref_com_nombres[]',
-            'required' => false,
+            'name' => 'tar_cre_institucion1',
+            'required' => true,
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'tar_cre_institucion2',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Alpha',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+                        ),
+                        'allowWhiteSpace' => true,
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'tar_cre_numero_tarjeta1',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -1007,14 +1953,23 @@ class FormularioValidator extends InputFilter{
         ));
         
         $this->add(array(
-            'name' => 'ref_com_direccion[]',
-            'required' => false,
+            'name' => 'tar_cre_numero_tarjeta2',
+            'required' => true,
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'Int',
+                    'options' => array(
+                        'messages' => array(
+                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -1022,119 +1977,51 @@ class FormularioValidator extends InputFilter{
         ));
         
         $this->add(array(
-            'name' => 'ref_com_telefono[]',
-            'required' => false,
+            'name' => 'tar_cre_anio_socio1',
+            'required' => true,
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
                     ),
                 ),
+                array(
+                    'name' => 'Date',
+                    'options' => array(
+                        'format' => 'Y',
+                        'messages' => array(
+                        \Zend\Validator\Date::INVALID => 'Formato de fecha incorrecto',
+                        \Zend\Validator\Date::INVALID_DATE   => "Solo se acepta el año. Ej: 1990",                 
+                        ),
+                    ),
+                ),
             ),
-        ));
+        ));    
         
         $this->add(array(
-            'name' => 'ref_ban_banco[]',
-            'required' => false,
+            'name' => 'tar_cre_anio_socio2',
+            'required' => true,
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
+                    'break_chain_on_failure' => true,
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
                         ),
                     ),
                 ),
-            ),
-        ));
-        
-        $this->add(array(
-            'name' => 'ref_ban_tipo_cuenta[]',
-            'required' => false,
-            'validators' => array(
                 array(
-                    'name' => 'NotEmpty',
+                    'name' => 'Date',
                     'options' => array(
+                        'format' => 'Y',
                         'messages' => array(
-                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
-                        ),
-                    ),
-                ),
-            ),
-        ));
-        
-        $this->add(array(
-            'name' => 'ref_ban_numero_cuenta[]',
-            'required' => false,
-            'validators' => array(
-                array(
-                    'name' => 'NotEmpty',
-                    'options' => array(
-                        'messages' => array(
-                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
-                        ),
-                    ),
-                ),
-            ),
-        ));
-        
-        $this->add(array(
-            'name' => 'tar_cre_institucion[]',
-            'required' => false,
-            'validators' => array(
-                array(
-                    'name' => 'NotEmpty',
-                    'options' => array(
-                        'messages' => array(
-                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
-                        ),
-                    ),
-                ),
-            ),
-        ));
-        
-        $this->add(array(
-            'name' => 'tar_cre_numero_tarjeta[]',
-            'required' => false,
-            'validators' => array(
-                array(
-                    'name' => 'NotEmpty',
-                    'options' => array(
-                        'messages' => array(
-                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
-                        ),
-                    ),
-                ),
-            ),
-        ));
-        
-        $this->add(array(
-            'name' => 'tar_cre_anio_socio[]',
-            'required' => false,
-            'validators' => array(
-                array(
-                    'name' => 'NotEmpty',
-                    'options' => array(
-                        'messages' => array(
-                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
-                        ),
-                    ),
-                ),
-            ),
-        ));
-        
-        $this->add(array(
-            'name' => 'per_tarjeta_credito',
-            'required' => false,
-            'validators' => array(
-                array(
-                    'name' => 'NotEmpty',
-                    'options' => array(
-                        'messages' => array(
-                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        \Zend\Validator\Date::INVALID => 'Formato de fecha incorrecto',
+                        \Zend\Validator\Date::INVALID_DATE   => "Solo se acepta el año. Ej: 1990",                 
                         ),
                     ),
                 ),
