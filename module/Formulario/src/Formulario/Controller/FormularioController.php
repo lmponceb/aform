@@ -196,14 +196,13 @@ class FormularioController extends AbstractActionController {
             return $mv;
         }
         
-        
-        
         $persona = new Persona();
         $persona->exchangeArray($params);
 
         if(!$this->getPersonaTable()->obtenerPorCedula($persona->getPer_documento())){
-            //Guardar datos de la persona    
+            //Guardar datos de la persona            
             $this->getPersonaTable()->guardar($persona);  
+
         }else{
             $mv = new ViewModel(array(
                 'form' => $form,
@@ -230,8 +229,10 @@ class FormularioController extends AbstractActionController {
         //Guarda datos de referencias 
         $this->referencias($per_id,$params);
 
-
-        return $this->redirect()->toRoute('formulario');
+        return new ViewModel(array(
+            'titulo' => 'El registro ha sido exitoso!'
+        ));
+//        return $this->redirect()->toRoute('formulario',array('formulario' => 'success'));
     }
 
     //Función para cargar ciudades por provincia
@@ -455,6 +456,10 @@ class FormularioController extends AbstractActionController {
         $this->getTarjetasCredito()->guardar($t2);
         
         return $p1;
+    }
+    
+    public function successAction(){
+        
     }
 
     public function addAction() {

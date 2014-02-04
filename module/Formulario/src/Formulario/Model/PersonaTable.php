@@ -25,7 +25,7 @@ class PersonaTable
         $rowset = $this->tableGateway->select(array('per_documento' => $per_documento));
         $row = $rowset->current();
         if (!$row) {
-            throw new \Exception("Could not find row $per_documento");
+            return false;
         }
         $per_id = $row->getPer_id();
         return $per_id;
