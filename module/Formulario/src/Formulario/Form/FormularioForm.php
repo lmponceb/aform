@@ -4,7 +4,7 @@ namespace Formulario\Form;
 
 use Zend\Form\Form;
 
-class FormularioForm extends Form {
+class FormularioForm extends Form implements \Zend\InputFilter\InputFilterProviderInterface{
 
     public function __construct($name = null) {
         // we want to ignore the name passed
@@ -1038,6 +1038,19 @@ class FormularioForm extends Form {
                 'class' => 'btn btn-success'
             ),
         ));
+    }
+    
+    public function getInputFilterSpecification()
+    {
+        return array(
+            array(
+                'name' => 'per_documento',
+                'required' => true,
+                'validators' => array(
+                    array('name' => '\Formulario\Form\CedulaValidator'),
+                ),
+            ),
+        );
     }
 
 }

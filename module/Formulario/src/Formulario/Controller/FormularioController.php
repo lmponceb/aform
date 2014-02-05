@@ -159,7 +159,7 @@ class FormularioController extends AbstractActionController {
         return new ViewModel(array(
             'form' => $form,
             'flag' => 'crear'
-                ));
+            ));
     }
 
     //Función para guardar los datos del formulario a la base de datos
@@ -458,8 +458,62 @@ class FormularioController extends AbstractActionController {
         return $p1;
     }
     
-    public function successAction(){
+    public function holaAction(){
+        $string = '1714686901';
+        $tamano = strlen($string);
+        $provincia = substr($string,0,2);
         
+        if($tamano == 10){
+            if($provincia >= 1 && $provincia <= 24){
+                $ultimo = substr($string,-1,1);
+                $pares =array();
+                $impares = array();
+                for($i = 0; $i < $tamano - 1; $i++){
+                    if ($i%2==0){
+                        $impares[] = substr($string,$i,1);
+                    }else{
+                        $pares[] = substr($string,$i,1);
+                        }                 
+                }
+                $timpares = array();
+                foreach($impares as $impar){
+                    $impar = $impar * 2;
+                    if($impar > 9){
+                        $timpares[] = $impar - 9;
+                    }else{
+                        $timpares[] = $impar;
+                    }
+                }
+                
+                $total = array_sum($pares) + array_sum($timpares);
+                $primero = substr($total,0,1);
+                $primero = ($primero + 1) * 10;
+                $digito = $primero - $total;
+                
+                if($digito == 10){
+                    $digito = '0';
+                }
+                
+                if($digito == $ultimo){
+                    $resultado = 'Cédula correcta';
+                }else{
+                    $resultado = 'Cédula incorrecta';
+                }
+            }else{
+                $a = 'Cedula No valida';
+            }
+        }
+        return new ViewModel(array(
+            'var' => $string,
+            'count' => $tamano - 1,
+            'dis' => $pares,
+            'pro' => $impares,
+            'timpares' =>$timpares,
+            'total' => $total,
+            'primero' => $primero,
+            'digito' => $digito,
+            'resultado' => $resultado
+        ));
     }
 
     public function addAction() {

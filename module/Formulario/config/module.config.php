@@ -5,6 +5,11 @@ return array(
             'Formulario\Controller\Formulario' => 'Formulario\Controller\FormularioController',
         ),
     ),
+    'validators' => array(
+        'invokables' => array(
+            'CedulaValidator' => 'Formulario\Form\CedulaValidator'
+        ),
+    ),
     // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
@@ -23,7 +28,7 @@ return array(
                 ),
             ),
         ),
-    ),    
+    ), 
     'view_manager' => array(
         'template_path_stack' => array(
             'formulario' => __DIR__ . '/../view',

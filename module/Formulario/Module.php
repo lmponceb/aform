@@ -210,15 +210,4 @@ class Module {
         );
     }
 
-    public function getViewHelperConfig() {
-        return array(
-            'factories' => array(
-                // the array key is the name of the invoke function that is called from view
-                'sayHello' => function($name) {
-                    return new SayHello($name);
-                },
-            ),
-        );
-    }
-
 }
