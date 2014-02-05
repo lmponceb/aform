@@ -1050,6 +1050,13 @@ class FormularioForm extends Form implements \Zend\InputFilter\InputFilterProvid
                     array('name' => '\Formulario\Form\CedulaValidator'),
                 ),
             ),
+            array(
+                'name' => 'per_conyuge_documento',
+                'required' => false,
+                'validators' => array(
+                    array('name' => '\Formulario\Form\CedulaValidator'),
+                ),
+            ),
         );
     }
 
