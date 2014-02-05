@@ -39,7 +39,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'No. de Documento:',
+                'label' => 'No. Cédula de Identidad o Pasaporte:',
             ),
         ));
         
@@ -154,7 +154,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Nombre Conyuge:',
+                'label' => 'Nombre Cónyuge:',
             ),
         ));
         
@@ -165,7 +165,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'No. Documento Conyuge:',
+                'label' => 'No. Documento Cónyuge:',
             ),
         ));
 
@@ -354,7 +354,7 @@ class FormularioForm extends Form {
                 'id' => 'per_empresa_inicio'
             ),
             'options' => array(
-                'label' => 'Inicio de Operaciones de la Empresa:',
+                'label' => 'Fecha de ingreso a la empresa o inicio de la misma:',
             ),
         ));
         $this->add(array(
@@ -699,7 +699,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Prestamos en Inst. Financieras:',
+                'label' => 'Préstamos en Inst. Financieras:',
             ),
         ));
         
@@ -732,7 +732,7 @@ class FormularioForm extends Form {
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Prestamo en Alianza del Valle:',
+                'label' => 'Préstamo en Alianza del Valle:',
             ),
         ));
         
