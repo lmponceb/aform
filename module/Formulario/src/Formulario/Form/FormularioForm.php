@@ -31,6 +31,23 @@ class FormularioForm extends Form implements \Zend\InputFilter\InputFilterProvid
                 'empty_option' => 'Escoja el País:'
             ),
         ));
+        
+        $this->add(array(
+            'type' => 'Zend\Form\Element\Select',
+            'name' => 'tipo_documento',
+            'attributes' => array(
+                'id' => 'tipo_documento',
+                'class' => 'form-control',
+            ),
+            'options' => array(
+                'label' => 'Tipo de Documento:',
+                'empty_option' => 'Escoja el Tipo',
+                'value_options' => array(
+                    'C' => 'Cédula',
+                    'P' => 'Pasaporte'
+                ),
+            ),
+        ));
 
         $this->add(array(
             'name' => 'per_documento',
@@ -39,7 +56,7 @@ class FormularioForm extends Form implements \Zend\InputFilter\InputFilterProvid
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'No. Cédula de Identidad o Pasaporte:',
+                'label' => 'No. CI o Pasaporte:',
             ),
         ));
         
@@ -303,7 +320,7 @@ class FormularioForm extends Form implements \Zend\InputFilter\InputFilterProvid
             ),
             'options' => array(
                 'label' => 'Actividad Económica:',
-                'empty_option' => 'Escoja el tipo de actividad económica',
+                'empty_option' => 'Escoja la actividad económica',
             ),
         ));
 

@@ -1,0 +1,110 @@
+body{
+    font-family: tahoma;
+}
+div.cabecera{
+    width:987px;
+    height:132px;
+    margin: 0 auto;
+    background-image:url('../img/cabecera.png');
+}
+
+div.container{
+    width:987px;
+    margin:0 auto;
+}
+
+div.container h1{
+    color:#1f497d;
+    text-transform: uppercase;
+    text-align:center;
+}
+
+div.container h3{
+    color:#963634;
+    text-decoration: underline;
+}
+
+div.container .form-group{
+    float:left;
+    margin-left: 10px;
+}
+
+div.container label{
+   font-weight: bold; 
+}
+
+div.container label span{
+    font-weight: bold;
+}
+
+.grupo{
+    padding: 5px;
+    float:left;
+    border:2px solid #000000;
+    margin-bottom: 20px;
+    width: 977px;
+}
+
+.subgrupo{
+float:left;
+width:50%;
+}
+
+.referencias .subgrupo{
+width:100%;
+border-bottom: 2px solid #000000;
+padding-bottom: 30px;
+}
+
+.grupo .section{
+height:50px;
+margin-bottom:5px;
+border-bottom: 1px solid #000000;
+}
+
+.informacion-financiera .form-group{
+height:48px;
+}
+
+.situacion-financiera .form-group{
+height:48px;
+}
+
+/* fieldset */
+
+fieldset legend{
+font-weight:bold;
+float:left;
+}
+
+fieldset label{
+float:left;
+}
+
+fieldset{
+border:none;
+margin: 0;
+padding: 0;
+}
+
+/* fieldset */
+
+/* errores */
+
+.container ul{
+padding:0;
+margin:0;
+}
+
+.container ul li{
+list-style:none;
+color:red;
+}
+
+/* errores */
+
+input#submitbutton{
+float:left;
+margin-left: 441px;
+font-size: 30px;
+}

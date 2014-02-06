@@ -32,6 +32,21 @@ class FormularioValidator extends InputFilter{
         ));
         
         $this->add(array(
+            'name' => 'tipo_documento',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'NotEmpty',
+                    'options' => array(
+                        'messages' => array(
+                            \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+            ),
+        ));
+        
+        $this->add(array(
             'name' => 'per_documento',
             'required' => true,
             'validators' => array(
@@ -45,10 +60,10 @@ class FormularioValidator extends InputFilter{
                     ),
                 ),
                 array(
-                    'name' => 'Int',
+                    'name' => 'Alnum',
                     'options' => array(
                         'messages' => array(
-                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
+                            \Zend\I18n\Validator\Alnum::NOT_ALNUM=> 'El campo debe tener solo números o letras',
                         ),
                     ),
                 ),

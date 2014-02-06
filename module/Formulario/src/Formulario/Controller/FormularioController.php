@@ -155,7 +155,7 @@ class FormularioController extends AbstractActionController {
         $form->get('ciu_id')->setValueOptions($this->getCiudadTable()->getCiudadesSelect());
         $form->get('par_id')->setValueOptions($this->getParroquiaTable()->getParroquiasSelect());
         $form->get('act_eco_id')->setValueOptions($this->getActividadEconomicaTable()->getActividadesSelect());
-
+              
         return new ViewModel(array(
             'form' => $form,
             'flag' => 'crear'
@@ -168,9 +168,9 @@ class FormularioController extends AbstractActionController {
             return $this->redirect()->toRoute('formulario',array('controller' => 'formulario'));
         }
         
-        $params = $this->request->getPost();
-            
+        $params = $this->request->getPost();   
         $form = new FormularioForm();
+        
         $form->get('pai_id')->setValueOptions($this->getPaisTable()->getPaisesSelect());
         $form->get('pro_id')->setValueOptions($this->getProvinciaTable()->getProvinciasSelect());
         $form->get('ciu_id')->setValueOptions($this->getCiudadTable()->getCiudadesSelect());
@@ -178,12 +178,30 @@ class FormularioController extends AbstractActionController {
         $form->get('act_eco_id')->setValueOptions($this->getActividadEconomicaTable()->getActividadesSelect());
                
         $form->setInputFilter(new FormularioValidator());
+        if($params['tipo_documento'] == 'P'){
+            $cont = 0;
+            $newValidatorChain = new \Zend\Validator\ValidatorChain;
+        // loop through all validators of the validator chained currently attached to the element
+        foreach ($form->getInputFilter()->get('per_documento')->getValidatorChain()->getValidators() as $validator) {
+            // attach validator unless it's instance of Zend\Validator\EmailAddress
+            if ($cont <= 1) {
+                $newValidatorChain->addValidator($validator['instance'], $validator['breakChainOnFailure']);
+                $cont++;
+            }
+        }
+        // replace the old validator chain on the element
+        $form->getInputFilter()->get('per_documento')->setValidatorChain($newValidatorChain);
+        }
         
+            
         if(!$params['per_conyuge_nombre'] == ''){
             $form->getInputFilter()->get('per_conyuge_documento')->setRequired(true);
         }
-        
-        $form->setData($params);
+//        echo '<pre>';
+//        print_r($a);
+//        echo '</pre>';
+//        die();
+        $form->setData($params); 
         
         if(!$form->isValid()){
             $form->get('ciu_id')->setValueOptions($this->getCiudadTable()->getCiudadesSelect($form->getValue('pro_id')));

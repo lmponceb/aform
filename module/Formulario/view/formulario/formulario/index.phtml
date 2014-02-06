@@ -17,67 +17,90 @@ $form->prepare();
 echo $this->form()->openTag($form);
 echo $this->formHidden($form->get('per_id'));
 ?>
-<div class="datos-personales grupo">
 <h3>Datos Personales</h3>
-<hr>
-<div class='form-group'><?php echo $this->formRow($form->get('pai_id')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_documento')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_nombres')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_apellido_paterno')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_apellido_materno')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_lugar')); ?></div>
-<div class='form-group d-picker'><?php echo $this->formRow($form->get('per_nacimiento_fecha')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_sexo')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_dependientes')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_estado_civil')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_nombre')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_documento')); ?></div>
-
+<div class="datos-personales grupo">
+    <div class="section">
+        <div class='form-group'><?php echo $this->formRow($form->get('tipo_documento')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_documento')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_apellido_paterno')); ?></div>
+    </div>
+    <div class="section">
+        <div class='form-group'><?php echo $this->formRow($form->get('per_apellido_materno')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_nombres')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_nacimiento_lugar')); ?></div>
+    </div>
+    <div class="section">
+        <div class='form-group d-picker'><?php echo $this->formRow($form->get('per_nacimiento_fecha')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_sexo')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_dependientes')); ?></div>
+    </div>
+    <div class="section" style="border:none;">
+        <div class='form-group'><?php echo $this->formRow($form->get('per_estado_civil')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_nombre')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_conyuge_documento')); ?></div>
+    </div>
 </div>
-<div class="direccion-domiciliaria grupo">
 <h3>Dirección Domiciliaria</h3>
-<hr>
-<div class='form-group'><?php echo $this->formRow($form->get('pro_id')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('ciu_id')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('par_id')); ?></div>   
-<div class='form-group'><?php echo $this->formRow($form->get('per_barrio')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_direccion')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_tiempo_residencia')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_telefono')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_celular')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_email')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_tipo_vivienda')); ?></div>
-
+<div class="direccion-domiciliaria grupo">
+    <div class="section">
+        <div class='form-group'><?php echo $this->formRow($form->get('pai_id')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('pro_id')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('ciu_id')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('par_id')); ?></div> 
+    </div>
+    <div class="section">
+        <div class='form-group'><?php echo $this->formRow($form->get('per_barrio')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_direccion')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_tiempo_residencia')); ?></div>
+    </div>
+    <div class="section">
+        <div class='form-group'><?php echo $this->formRow($form->get('per_telefono')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_celular')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_email')); ?></div>
+    </div>
+    <div class="section" style="border:none;">
+        <div class='form-group'><?php echo $this->formRow($form->get('per_tipo_vivienda')); ?></div>
+    </div>
 </div>
-
-<div class="descripcion-actividad grupo">
 <h3>Descripción de la Actividad Económica</h3>
-<hr>
-<div class='form-group'><?php echo $this->formRow($form->get('act_eco_id')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_numero_empleados')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_tipo')); ?></div>
+<div class="descripcion-actividad grupo">
+    <div class="section">
+        <div class='form-group'><?php echo $this->formRow($form->get('act_eco_id')); ?></div>
+        <div class='form-group'><?php echo $this->formRow($form->get('per_numero_empleados')); ?></div>
+    </div>
+    <div class="section" style="border:none;">
+        <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_tipo')); ?></div>
+    </div>
 
 </div>
-
-<div class="actividad-economica grupo">
 <h3>Actividad Económica</h3>
-<hr>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_producto')); ?></div>
-<div class='form-group d-picker'><?php echo $this->formRow($form->get('per_empresa_inicio')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_nombre')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_cargo')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_ruc')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_direccion')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_referencia')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_telefono')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_celular')); ?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('per_empresa_email')); ?></div>
-
+<div class="actividad-economica grupo">
+        <div class="section">
+            <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_producto')); ?></div>
+        </div>
+        <div class="section">
+            <div class='form-group d-picker'><?php echo $this->formRow($form->get('per_empresa_inicio')); ?></div>
+            <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_nombre')); ?></div>
+        </div>
+        <div class="section">
+            <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_cargo')); ?></div>
+            <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_ruc')); ?></div>
+        </div>
+        <div class="section">
+            <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_direccion')); ?></div>
+            <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_referencia')); ?></div>
+        </div>
+        <div class="section">
+            <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_telefono')); ?></div>
+            <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_celular')); ?></div>
+        </div>
+        <div class="section" style="border:none;">
+            <div class='form-group'><?php echo $this->formRow($form->get('per_empresa_email')); ?></div>
+        </div>
 </div>
 
-<div class="informacion-financiera grupo">
 <h3>Información Financiera</h3>
-<hr>
+<div class="informacion-financiera grupo">
 <div class="subgrupo ingresos">
 <h4>INGRESOS</h4>
 <div class='form-group'><?php echo $this->formRow($form->get('inf_fin_arriendos1')); ?></div>
@@ -101,9 +124,8 @@ echo $this->formHidden($form->get('per_id'));
 </div>
 </div>
 
-<div class="situacion-financiera grupo">
 <h3>Situación Financiera</h3>
-<hr>
+<div class="situacion-financiera grupo">
 <div class="subgrupo activos">
 <h4>Descripción Activos</h4>
 <div class='form-group'><?php echo $this->formRow($form->get('sit_fin_bancos1')); ?></div>
@@ -122,53 +144,61 @@ echo $this->formHidden($form->get('per_id'));
 <div class='form-group'><?php echo $this->formRow($form->get('sit_fin_otras_obligaciones11'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('sit_fin_prestamo12'));?></div>
 </div>
-<hr>
 </div>
 
-<div class="referencias grupo">
 <h3>Referencias Personales,Comerciales y Bancarias</h3>   
-<hr>
+<div class="referencias grupo">  
 <div class="subgrupo personales">
 <h4>Personales(Familiares o amistades que no vivan con Ud.)</h4>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres1'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion1'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono1'));?></div>
-
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres2'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion2'));?></div>
-<div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono2'));?></div>
+<div class="section">
+    <div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres1'));?></div>
+    <div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion1'));?></div>
+    <div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono1'));?></div>
+</div>
+<div class="section" style="border:none;">
+    <div class='form-group'><?php echo $this->formRow($form->get('ref_per_nombres2'));?></div>
+    <div class='form-group'><?php echo $this->formRow($form->get('ref_per_direccion2'));?></div>
+    <div class='form-group'><?php echo $this->formRow($form->get('ref_per_telefono2'));?></div>
+</div>
 </div>
 <div class="subgrupo comerciales">
 <h4>Comerciales</h4>
+<div class="section">
 <div class='form-group'><?php echo $this->formRow($form->get('ref_com_nombres1'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('ref_com_direccion1'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('ref_com_telefono1'));?></div>
+</div>
 
 <div class='form-group'><?php echo $this->formRow($form->get('ref_com_nombres2'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('ref_com_direccion2'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('ref_com_telefono2'));?></div>
+
 </div>
 <div class="subgrupo bancarias">
 <h4>Bancarias</h4>
+<div class="section">
 <div class='form-group'><?php echo $this->formRow($form->get('ref_ban_banco1'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('ref_ban_tipo_cuenta1'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('ref_ban_numero_cuenta1'));?></div>
+</div>
 
 <div class='form-group'><?php echo $this->formRow($form->get('ref_ban_banco2'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('ref_ban_tipo_cuenta2'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('ref_ban_numero_cuenta2'));?></div>
+
 </div>
 <div class="subgrupo credito">
 <h4>Tarjetas de Crédito</h4>
+<div class="section">
 <div class='form-group'><?php echo $this->formRow($form->get('tar_cre_institucion1'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('tar_cre_numero_tarjeta1'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('tar_cre_anio_socio1'));?></div>
-
+</div>
 <div class='form-group'><?php echo $this->formRow($form->get('tar_cre_institucion2'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('tar_cre_numero_tarjeta2'));?></div>
 <div class='form-group'><?php echo $this->formRow($form->get('tar_cre_anio_socio2'));?></div>
 </div>
-<div class="subgrupo">
+<div class="subgrupo" style="border:none;">
 <h4>Servicios</h4>
 <div class='form-group'><?php echo $this->formRow($form->get('per_tarjeta_credito'));?></div>
 </div>

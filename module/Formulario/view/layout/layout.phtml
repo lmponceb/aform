@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <?php
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                ->prependStylesheet($this->basePath() . '/css/formulario.css')
+                ->prependStylesheet($this->basePath() . '/css/ui-lightness/jquery-ui-1.10.4.custom.css')
+        ?>
+        
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath() . '/js/jquery-ui-min.js')    
+            ->prependFile($this->basePath() . '/js/jquery-min.js')           
+        ; ?>
+        <meta charset="utf-8">
+        <title>Formulario Socio/Cliente</title>
+    </head>
+    <body>
+        <div class="cabecera"></div>
+        <div class="container">
+            <?php echo $this->content; ?>
+        </div>
+        <footer></footer>
+    </body>
+</html>

@@ -28,19 +28,25 @@ class CedulaValidator extends \Zend\Validator\AbstractValidator {
     
     public function cedula($value){
         $string = $value;
+        $tipo = substr($string,0,1);
         $tamano = strlen($string);
+        $cedula = substr($string,1);
         $provincia = substr($string,0,2);
+        
+//        if($tipo == 'P'){
+//            return true;
+//        }
         
         if($tamano == 10){
             if($provincia >= 1 && $provincia <= 24){
-                $ultimo = substr($string,-1,1);
+                $ultimo = substr($cedula,-1,1);
                 $pares =array();
                 $impares = array();
                 for($i = 0; $i < $tamano - 1; $i++){
                     if ($i%2==0){
-                        $impares[] = substr($string,$i,1);
+                        $impares[] = substr($cedula,$i,1);
                     }else{
-                        $pares[] = substr($string,$i,1);
+                        $pares[] = substr($cedula,$i,1);
                         }                 
                 }
                 $timpares = array();
