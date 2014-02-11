@@ -254,7 +254,7 @@ class FormularioForm extends Form implements \Zend\InputFilter\InputFilterProvid
                 'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Tiempo de Residencia:',
+                'label' => 'Tiempo de Residencia(años):',
             ),
         ));
         

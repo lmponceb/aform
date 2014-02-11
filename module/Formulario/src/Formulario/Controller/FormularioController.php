@@ -178,29 +178,26 @@ class FormularioController extends AbstractActionController {
         $form->get('act_eco_id')->setValueOptions($this->getActividadEconomicaTable()->getActividadesSelect());
                
         $form->setInputFilter(new FormularioValidator());
+        $a = array();
+        
         if($params['tipo_documento'] == 'P'){
-            $cont = 0;
             $newValidatorChain = new \Zend\Validator\ValidatorChain;
         // loop through all validators of the validator chained currently attached to the element
         foreach ($form->getInputFilter()->get('per_documento')->getValidatorChain()->getValidators() as $validator) {
             // attach validator unless it's instance of Zend\Validator\EmailAddress
-            if ($cont <= 1) {
+            $a = get_class($validator['instance']);
+            if ($a != "Formulario\Form\CedulaValidator") {
                 $newValidatorChain->addValidator($validator['instance'], $validator['breakChainOnFailure']);
-                $cont++;
             }
         }
         // replace the old validator chain on the element
         $form->getInputFilter()->get('per_documento')->setValidatorChain($newValidatorChain);
         }
-        
             
         if(!$params['per_conyuge_nombre'] == ''){
             $form->getInputFilter()->get('per_conyuge_documento')->setRequired(true);
         }
-//        echo '<pre>';
-//        print_r($a);
-//        echo '</pre>';
-//        die();
+
         $form->setData($params); 
         
         if(!$form->isValid()){

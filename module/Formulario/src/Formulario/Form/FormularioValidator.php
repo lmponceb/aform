@@ -67,6 +67,15 @@ class FormularioValidator extends InputFilter{
                         ),
                     ),
                 ),
+                array(
+                    'name' => 'StringLength',                 
+                    'options' => array(
+                        'max' => 13,
+                        'messages' => array(
+                        \Zend\Validator\StringLength::TOO_LONG => 'El campo contiene más de 13 caracteres.'
+                        ),
+                    ),
+                ),
             ),
         ));
         
@@ -377,16 +386,16 @@ class FormularioValidator extends InputFilter{
                         ),
                     ),
                 ),
-                array(
-                    'name' => 'Alpha',
-                    'options' => array(
-                        'messages' => array(
-                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
-                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
-                        ),
-                        'allowWhiteSpace' => true,
-                    ),
-                ),
+//                array(
+//                    'name' => 'Alpha',
+//                    'options' => array(
+//                        'messages' => array(
+//                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+//                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+//                        ),
+//                        'allowWhiteSpace' => true,
+//                    ),
+//                ),
             ),
         ));
         
@@ -428,10 +437,10 @@ class FormularioValidator extends InputFilter{
                     ),
                 ),
                 array(
-                    'name' => 'Int',
+                    'name' => 'Alnum',
                     'options' => array(
                         'messages' => array(
-                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
+                        \Zend\I18n\Validator\Alnum::INVALID => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -452,10 +461,10 @@ class FormularioValidator extends InputFilter{
                     ),
                 ),
                 array(
-                    'name' => 'Int',
+                    'name' => 'Digits',
                     'options' => array(
                         'messages' => array(
-                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
+                        \Zend\Validator\Digits::NOT_DIGITS => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -696,16 +705,16 @@ class FormularioValidator extends InputFilter{
                         ),
                     ),
                 ),
-                array(
-                    'name' => 'Alpha',
-                    'options' => array(
-                        'messages' => array(
-                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
-                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
-                        ),
-                        'allowWhiteSpace' => true,
-                    ),
-                ),
+//                array(
+//                    'name' => 'Alpha',
+//                    'options' => array(
+//                        'messages' => array(
+//                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+//                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+//                        ),
+//                        'allowWhiteSpace' => true,
+//                    ),
+//                ),
             ),
         ));
         
@@ -761,7 +770,7 @@ class FormularioValidator extends InputFilter{
         
         $this->add(array(
             'name' => 'per_empresa_celular',
-            'required' => true,
+            'required' => false,
             'validators' => array(
                 array(
                     'name' => 'NotEmpty',
@@ -773,10 +782,10 @@ class FormularioValidator extends InputFilter{
                     ),
                 ),
                 array(
-                    'name' => 'Int',
+                    'name' => 'Digits',
                     'options' => array(
                         'messages' => array(
-                        \Zend\I18n\Validator\Int::NOT_INT => 'El campo debe tener solo números',
+                        \Zend\Validator\Digits::NOT_DIGITS => 'El campo debe tener solo números',
                         ),
                     ),
                 ),
@@ -1520,16 +1529,16 @@ class FormularioValidator extends InputFilter{
                         ),
                     ),
                 ),
-                array(
-                    'name' => 'Alpha',
-                    'options' => array(
-                        'messages' => array(
-                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
-                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
-                        ),
-                        'allowWhiteSpace' => true,
-                    ),
-                ),
+//                array(
+//                    'name' => 'Alpha',
+//                    'options' => array(
+//                        'messages' => array(
+//                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+//                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+//                        ),
+//                        'allowWhiteSpace' => true,
+//                    ),
+//                ),
             ),
         ));
         
@@ -1546,16 +1555,16 @@ class FormularioValidator extends InputFilter{
                         ),
                     ),
                 ),
-                array(
-                    'name' => 'Alpha',
-                    'options' => array(
-                        'messages' => array(
-                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
-                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
-                        ),
-                        'allowWhiteSpace' => true,
-                    ),
-                ),
+//                array(
+//                    'name' => 'Alpha',
+//                    'options' => array(
+//                        'messages' => array(
+//                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+//                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+//                        ),
+//                        'allowWhiteSpace' => true,
+//                    ),
+//                ),
             ),
         ));
         
@@ -1620,16 +1629,16 @@ class FormularioValidator extends InputFilter{
                         ),
                     ),
                 ),
-                array(
-                    'name' => 'Alpha',
-                    'options' => array(
-                        'messages' => array(
-                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
-                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
-                        ),
-                        'allowWhiteSpace' => true,
-                    ),
-                ),
+//                array(
+//                    'name' => 'Alpha',
+//                    'options' => array(
+//                        'messages' => array(
+//                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+//                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+//                        ),
+//                        'allowWhiteSpace' => true,
+//                    ),
+//                ),
             ),
         ));
         
@@ -1646,16 +1655,16 @@ class FormularioValidator extends InputFilter{
                         ),
                     ),
                 ),
-                array(
-                    'name' => 'Alpha',
-                    'options' => array(
-                        'messages' => array(
-                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
-                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
-                        ),
-                        'allowWhiteSpace' => true,
-                    ),
-                ),
+//                array(
+//                    'name' => 'Alpha',
+//                    'options' => array(
+//                        'messages' => array(
+//                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+//                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+//                        ),
+//                        'allowWhiteSpace' => true,
+//                    ),
+//                ),
             ),
         ));
         
@@ -1672,16 +1681,16 @@ class FormularioValidator extends InputFilter{
                         ),
                     ),
                 ),
-                array(
-                    'name' => 'Alpha',
-                    'options' => array(
-                        'messages' => array(
-                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
-                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
-                        ),
-                        'allowWhiteSpace' => true,
-                    ),
-                ),
+//                array(
+//                    'name' => 'Alpha',
+//                    'options' => array(
+//                        'messages' => array(
+//                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+//                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+//                        ),
+//                        'allowWhiteSpace' => true,
+//                    ),
+//                ),
             ),
         ));
         
@@ -1698,16 +1707,16 @@ class FormularioValidator extends InputFilter{
                         ),
                     ),
                 ),
-                array(
-                    'name' => 'Alpha',
-                    'options' => array(
-                        'messages' => array(
-                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
-                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
-                        ),
-                        'allowWhiteSpace' => true,
-                    ),
-                ),
+//                array(
+//                    'name' => 'Alpha',
+//                    'options' => array(
+//                        'messages' => array(
+//                        \Zend\I18n\Validator\Alpha::NOT_ALPHA => 'El campo debe tener solo letras',
+//                        \Zend\I18n\Validator\Alpha::STRING_EMPTY => 'El campo es obligatorio',
+//                        ),
+//                        'allowWhiteSpace' => true,
+//                    ),
+//                ),
             ),
         ));
         
@@ -2005,6 +2014,16 @@ class FormularioValidator extends InputFilter{
                     ),
                 ),
                 array(
+                    'name' => 'StringLength',    
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'max' => 4,
+                        'messages' => array(
+                        \Zend\Validator\StringLength::TOO_LONG => 'El campo contiene más de 4 caracteres.'
+                        ),
+                    ),
+                ),
+                array(
                     'name' => 'Date',
                     'options' => array(
                         'format' => 'Y',
@@ -2027,6 +2046,16 @@ class FormularioValidator extends InputFilter{
                     'options' => array(
                         'messages' => array(
                             \Zend\Validator\NotEmpty::IS_EMPTY => 'El campo es obligatorio',
+                        ),
+                    ),
+                ),
+                array(
+                    'name' => 'StringLength',    
+                    'break_chain_on_failure' => true,
+                    'options' => array(
+                        'max' => 4,
+                        'messages' => array(
+                        \Zend\Validator\StringLength::TOO_LONG => 'El campo contiene más de 4 caracteres.'
                         ),
                     ),
                 ),
